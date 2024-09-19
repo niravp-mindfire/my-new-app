@@ -1,0 +1,90 @@
+.editor-container {
+  padding: 20px;
+  background-color: #1d1d1d;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.quill-editor {
+  background-color: #1d1d1d;
+  color: #fff;
+  min-height: 200px;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #2c2c2c;
+  position: relative;
+}
+
+.inline-toolbar {
+  position: absolute;
+  background-color: #333;
+  display: flex;
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background-color: #2a2a2a;
+  color: #ffcc00;
+  transition: background-color 0.2s ease;
+}
+
+.icon-button:hover {
+  background-color: #ffcc00;
+  color: #1d1d1d;
+}
+
+.editor-control {
+  display: flex;
+  align-items: center;
+  color: #79ff79;
+  font-size: 14px;
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 600px) {
+  .editor-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Style for the yellow dot before each paragraph */
+.paragraph-marker::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 4px;
+  background-color: #dada0a;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  z-index: 9999; /* Ensure it's high enough to appear above */
+}
+
+/* Ensure the paragraph marker doesn't overlap the paragraph content */
+.ql-editor p {
+  position: relative;
+  margin-left: 30px; /* Adjust based on how far you want the text from the dot */
+  padding-left: 5px !important;
+  color: white;
+}
+
+.ql-toolbar.ql-snow+.ql-container.ql-snow {
+  border: none;
+  border-left: 3px dotted #ccc !important;
+  position: relative; /* Ensure it creates a new stacking context */
+}
